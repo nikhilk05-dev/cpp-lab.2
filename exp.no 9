@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class Number
+{
+private:
+    int value;
+
+public:
+
+    Number(int v)
+    {
+        value = v;
+    }
+
+    bool operator==(Number n)
+    {
+        return value == n.value;
+    }
+
+    bool operator<(Number n)
+    {
+        return value < n.value;
+    }
+
+    bool operator>(Number n)
+    {
+        return value > n.value;
+    }
+};
+
+int main()
+{
+    Number n1(20);
+    Number n2(20);
+
+    if (n1 == n2)
+        cout << "Numbers are equal" << endl;
+
+    if (n1 < n2)
+        cout << "n1 is smaller" << endl;
+    else
+        cout << "n1 is not smaller" << endl;
+
+    if (n1 > n2)
+        cout << "n1 is greater" << endl;
+    else
+        cout << "n1 is not greater" << endl;
+
+    return 0;
+}
